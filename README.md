@@ -1,2 +1,2 @@
-# MarkusMueller-ds.github.io
+# MarkusMueller-DS.github.io
 static website
