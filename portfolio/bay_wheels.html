@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bay Wheels-Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/portfolio.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="/index.html">About Me</a></li>
+							<li><a href="/portfolio.html">Portfolio</a></li>
+							<li class="active"><a href="/portfolio/bay_wheels.html">Bay Wheels-Analysis</a></li>
+							<li><a href="/cv.html">CV</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><a href="#">Bay Wheels<br />
+									data exploration and visualization</a></h1>
+									<p> Final project from the Data Analyst Nanodegree from Udacity.</br> 
+										The goal of this project is to creat a presentation with explanatory visualizations.
+									</p>
+								</header>
+								<img class="image main" src="/images/bike1.png" alt="" /></a>
+
+								<!-- Text stuff -->
+
+								<h2>Brief Overview:</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Goal:</h3>
+										<ul>
+											<li>Create exploratory data visualizations that are going to be used to create a presentation</li>
+											<li>What is the difference between subscribers and customers?</li>
+										</ul>
+
+										<h3>Methodology:</h3>
+										<ul>
+											<li>Pandas to to gather and clean the data</li>
+											<li>Matplotlib and Seaborn to visualize the data</li>
+											<li>NumPy and Pandas to calculate the index prices</li>
+											<li>Matplotlib and Seaborn to visualize</li>
+										</ul>
+
+										<h3>Results:</h3>
+										<ul>
+											<li>The rental system gets a lot more usage from subscribers than from customers</li>
+											<li>Subscriber only use the rentals on workdays whereas customers use it everyday</li>
+											<li>The biggest decrease in gold value during a crisis was -68% during the early 1980s recessions</li>
+										</ul>
+							
+									</div>
+									<div class="col-6 col-12-small">
+									
+										<h3>Challenges:</h3>
+										<ul>
+											<li>Data gathering</li>
+										</ul>
+										
+										<h3>What did I learn?</h3>
+										<ul>
+											<li>Data wrangling</li>
+											<li>Create more advanced visualizations</li>
+											<li>ransform a juypter notebook into presentation slides</li>
+										</ul>
+									</div>
+								</div>
+								<h2>Bay Wheels data exploration and visualization</h2>
+
+								
+								<h3>Introduction</h3>
+								<p>Bay Wheels is a regional public bicycle sharing system in the San Francisco Bay Area, California operated by Motivate 
+									in a partnership with the Metropolitan Transportation Commission and the Bay Area Air Quality Management District. 
+									Bay Wheels is the first regional and large-scale bicycle sharing system deployed in California and on the West Coast 
+									of the United States. It was established as Bay Area Bike Share in August 2013.</p>
+
+								<h3>Data wrangling</h3>
+								<ul>
+									<li>Transformed various columns into their right format: start_time and end_time to datetime and user_type as well as 
+										start_time_day to categorical</li>
+									<li>Dropped bike_share_for_all_trip and rental_access_method since they had to many missing values and weren’t part of 
+										my explanatory analysis</li>
+									<li>Added some time related columns like an extra column for day of the Week and Month</li>
+									<li>Calculated duration in minutes from duration_sec to enhance interpretability</li>
+									<li>Removed outliers from the duration in minutes column to enable fair comparison between user types, since outliers 
+										influence means.</li>
+								</ul>
+								
+								
+								<h3>Main findings</h3>
+								<p>The bike rental system gets a lot more usage from subscribers than from customers, this is most likely due to the reason 
+									that the service is used by people who are commuting to work and therefore subscribe to the service to enhance ease of use. 
+									It becomes obvious, when looking at the different usage patterns across the week. Customers use the service every day, 
+									whereas subscribers use it most frequently on workdays at 8 a.m. and 5 p.m., which are the busiest hours in the day for both 
+									user types. In general people use the service more on workdays than on weekends. But this is due to the fact that 
+									subscribers are outnumbering customers. For Customers the usage is the same on weekends and workdays, but the time spend 
+									on a bike is higher on weekends than on workdays. This is also true for subscribers but not in the same ratio, which is 
+									higher for customers. The average duration on the bike is for Customers 5 minutes longer than for Subscribers which have 
+									an average duration of 11 minutes. Regarding the usage duration, subscribers are driving the same amount every workday, 
+									whereas for customers the duration varies from workday to workday and increase on the weekend.</p>
+									
+							
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Frankfurt Rhine-Main Metropolitan Area<br />
+							Germany</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">markus.j.mueller94@icloud.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing"><span class="label">Xing</span></a></li>
+								<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
