@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gold-Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/portfolio.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="/index.html">About Me</a></li>
+							<li><a href="/portfolio.html">Portfolio</a></li>
+							<li class="active"><a href="portfolio/gold.html">Gold-Price-Crashes</a></li>
+							<li><a href="/cv.html">CV</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><a href="gold.html">Gold price development<br />
+										during major-S&P500-crashes)</a></h1>
+									<p>Visualization of the development of the gold price before and during major crashes.
+									</p>
+								</header>
+								<a href="gold.html" class="image main"><img src="/images/gold_development.png" alt="" /></a>
+
+								<!-- Text stuff -->
+								<h2>Brief Overview:</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Goal:</h3>
+										<ul>
+											<li>Is Gold the profiteur of uncertain times?</li>
+											<li>Visualitation that shows the progression of the gold price during different cirses</li>
+										</ul>
+
+										<h3>Methodology:</h3>
+										<ul>
+											<li>Gold prices are from quandle</li>
+											<li>S&P 500 prices from yahoofinancials</li>
+											<li>NumPy and Pandas to calculate the index prices</li>
+											<li>Matplotlib and Seaborn to visualize</li>
+										</ul>
+							
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Challenges:</h3>
+										<ul>
+											<li>Start and end dates of the crises</li>
+											<li>Visualization of all data in one chart</li>
+										</ul>
+										
+										<h3>What did I learn?</h3>
+										<ul>
+											<li>Working with multiple DataFrames in pandas (index, join, etc.)</li>
+											<li>Implementing visualization libraries (Matplotlib, Seaborn, Plotly)</li>
+										</ul>
+										
+										<h3>ToDo</h3>
+										<ul>
+											<li>Add interactivity</li>
+										</ul>
+
+									</div>
+									<h3>Results:</h3>
+										<ul>
+											<li>For the most time Gold prices were higher as before. Only in two instances gold performed weaker than the S&P 500 (early 1980s recession, Black Monday)</li>
+											<li>The highest gain was after the oil crisis in 1973 with a max gain of 284% based</li>
+											<li>The biggest decrease in gold value during a crisis was -68% during the early 1980s recessions</li>
+										</ul>
+
+								<h2>WIP</h2>
+								
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Frankfurt Rhine-Main Metropolitan Area<br />
+							Germany</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">markus.j.mueller94@icloud.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing"><span class="label">Xing</span></a></li>
+								<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
