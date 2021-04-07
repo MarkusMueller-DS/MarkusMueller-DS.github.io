@@ -31,11 +31,11 @@
 							<li><a href="/cv.html">CV</a></li>
 						</ul>
 						<ul class="icons">
-							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing"><span class="label">Xing</span></a></li>
-							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label" target="_blank">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle"><span class="label" target="_blank">Kaggle</span></a></li>
 						</ul>
 					</nav>
 
@@ -99,6 +99,7 @@
 								</div>
 								<hr />
 								<h2>Introduction</h2>
+								<p><span class="image right"><img src="/images/66Days_twitter.png" alt="" /></span></p>
 								<p>
 									The #66DaysofData Challenge started on 01.09.2020 and was created by data scientist and youtuber Ken Jee.
 									The goal of the challenge is to spend at least five minutes every day on a topic related to data science and 
@@ -106,8 +107,22 @@
 								</p>
 								<p>
 									Since I have been following Ken Jee on YouTube for a while, I also started the challenge on 01.09 and published 
-									what I did every day on Twitter. After the first month, I had the idea to collect the tweets, because I found 
-									it exciting to see what topics the participants deal with, to which it is an exciting own project.
+									what I did every day on Twitter. After the first month, I had the idea to collect the tweets. I was interested
+									in the topics that the participants are doing and it seems like a great project to do.
+								</p>
+
+								<h2>Data Gathering</h2>
+								<p>
+									I started collecting the tweets two month into the challenge (29.10.2020) - which was somewhat of a problem. 
+									I used <b><i><a href="https://pypi.org/project/tweepy/" target="_blank">tweepy</a></i></b> to manually query every week to get the current 
+									tweets (tweepy returns tweets up to 7 days in the past). By now, I use a corn-job to do the query automatically 
+									every 6 days. 
+								</p>
+								<p>
+									For tweets older than 7 days you can use the premium API <i>"Search Tweets: Full ArchiveSandbox"</i> but this is 
+									limited for free users and does not allow to remove unimportant tweets (e.g. retweets), so I had to do queries 
+									over several months to finally cover the whole period. I queried the premium API with 
+									<b><i><a href="https://pypi.org/project/searchtweets/" target="_blank">seachtweets</a></i></b>.
 								</p>
 							</section>
 							
@@ -129,11 +144,11 @@
 						<section>
 							<h3>Social</h3>
 							<ul class="icons alt">
-								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing"><span class="label">Xing</span></a></li>
-								<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github"><span class="label" target="_blank">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle"><span class="label" target="_blank">Kaggle</span></a></li>
 							</ul>
 						</section>
 					</section>
