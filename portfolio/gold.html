@@ -48,7 +48,7 @@
 									<h1><a href="gold.html">Gold price development<br />
 										during major-S&P500-crashes)</a></h1>
 									<p>Visualization of the development of the gold price before and during major crashes.</br>
-										Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/Gold-development-during-crises" class="icon brands fa-github"><span class="label">Github</span></a>
+										Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/Gold-development-during-crises" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a>
 									</p>
 								</header>
 								<a href="gold.html" class="image main"><img src="/images/gold_development.png" alt="" /></a>
@@ -60,7 +60,7 @@
 										<h3>Goal:</h3>
 										<ul>
 											<li>Is Gold the profiteur of uncertain times?</li>
-											<li>Visualitation that shows the progression of the gold price during different cirses</li>
+											<li>Visualizations that shows the progression of the gold price during different crashes</li>
 										</ul>
 
 										<h3>Methodology:</h3>
@@ -91,14 +91,70 @@
 										</ul>
 
 									</div>
-									<h3>Results:</h3>
-										<ul>
-											<li>For the most time Gold prices were higher as before. Only in two instances gold performed weaker than the S&P 500 (early 1980s recession, Black Monday)</li>
-											<li>The highest gain was after the oil crisis in 1973 with a max gain of 284% based</li>
-											<li>The biggest decrease in gold value during a crisis was -68% during the early 1980s recessions</li>
-										</ul>
+								</div>
+								<hr />
+								<h2>Introduction</h2>
+								<p>
+									The inspiration for this analysis is this <a href="https://www.reddit.com/r/dataisbeautiful/comments/fjvtt5/oc_current_market_sell_off_compared_to_major_ones/" target="_blank">Reddit post</a>, 
+									where the corona crash is compared to major ones in the past. As I am a stakeholder in gold I thought it would 
+									be interesting to see how the gold price develops in uncertain times. Gold is generally known as the safe haven 
+									for investors in such crises and is therefore the profiteer of uncertain times. <b>But is this really the case?</b>
+								</p>
+								<h2>Data Gathering</h2>
+								<p>
+									The gold price data is from <a href="https://www.quandl.com">Quandl</a>. Quandl is a data provider, which offers access to 
+									all sorts of quantitative data. I used it because I can query the gold price in USD from 1968 till now for free. To identify 
+									dates for the crashes in the Reddit post, I used wikipedia and data from the S&P500, since gold is mostly traded 
+									in USD and the S&P 500 is one of the most commonly followed equity indices, and many consider it to be one of the 
+									best representations of the U.S. stock market. The range of dates is from the high before the crash to the date 
+									where the price is higher than the high before the crisis. </br>
+									Listed below are the start and end dates of major crashes (from 1968): 
+									<ul>
+										<li><b>1970s energy crisis</b>: 11.05.1969 - 10.05.1970</li>
+										<li><b>1973 oil crisis</b>oil crisis: 02.01.1973 - 29.09.1974</li>
+										<li><b>Early 1980s recession</b>: 24.11.1980 - 02.08.1982</li>
+										<li><b>Black Monday</b>: 17.08.1987 - 30.11.1987</li>
+										<li><b>Dot-com bubble</b>: 20.03.2000 - 30.09.2002</li>
+										<li><b>Dot-com bubble</b>: 09.10.2007 - 02.03.2009</li>
+										<li><b>Corona</b>: 19.02.2020 - 18.08.2020</li>
+									</ul>
+									<b>How were the dates selected:</b></br>
+									The start day is the date with the hightst value right before the crash (I used yahoo finance to look at the graph to
+									determine the date but this wasn't very precise so I used it as a starting point and looked around that date to find 
+									the highst point before it went down). For the end date I used the first occurrence where the price was higher than 
+									before.
+								</p>
+								
+								<h2>What did I do?</h2>
+								<ul>
+									<li>Queried Quandl API for gold</li>
+									<li>Used python package YahooFinancials to get S&P 500</li>
+									<li>Identified dates for start, lowest price of the crisis and next higher price</li>
+									<li>Calculated the length of each crisis</li>
+									<li>Calculated the cumulated ptc change</li>
+									<li>Calculated the min and max percentage gain/loss in the period of the crashes</li>
+									<li>Created a visualization with every gold price development during the crashes</li>
+									<li>Created visualizations with a one on one comparison between gold price and S&P 500 development for every crash</li>
+								</ul>
 
-								<h2>WIP</h2>
+								<h2>Results</h2>
+								<p>
+									For the most time the Gold price was higher then before, when the S&P reached the same price as before the crisis. 
+									Only in two instances gold performed weaker than the S&P 500 (early 1980s recession, Black Monday). The highest 
+									gain was after the oil crisis in 1973 with a max gain of 284% and the biggest decrease in gold value was -68% during 
+									the early 1980s recessions:
+									<div class="row">
+									<div class="col-6 col-12-small">
+										<img class="image main" src="/images/gold_gain.png" alt="" />
+									</div>
+									<div class="col-6 col-12-small">
+										<img class="image main" src="/images/gold_loss.png" alt="" />
+									</div>
+								</div>
+									In terms of length, the Corona crash was the shortest one in history, where the S&P 500 reached a new high only after 
+									181 days, the second smallest was after Black Monday. Here the S&P took 701 days to reach a new high. The longest 
+									crisis was the oil-crisis in 1973, here the S&P 500 took 2744 days to reach a new high:
+								</p>
 								
 							</section>
 
