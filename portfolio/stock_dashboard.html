@@ -48,8 +48,8 @@
 									<h1>Stock Analysis<br />
 									Dashboard</a></h2>
 									<p>This is an interactive dashboard where users can pick a stock ticker, the date range and indicators.</br>
-										<i><a href="https://youtu.be/eb-ccqK6bcg">See</a> it in action!</i></br>
-										Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/Stocks-Analysis-Dashboard" class="icon brands fa-github"><span class="label">Github</span></a>
+										<i><b><a href="https://youtu.be/eb-ccqK6bcg" target="_blank">See</a> it in action!</b></i></br>
+										Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/Stocks-Analysis-Dashboard" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a>
 									</p>
 								</header>
 								<a href="#" class="image main"><img src="/images/stock.png" alt="" /></a>
@@ -88,7 +88,6 @@
 										<ul>
 											<li>Dealing with Streamlit (turns data scripts into shareable web apps).</li>
 											<li>Get to know different indicators related to the stock price</li>
-											<li>Preparing and dealing with text for a data analysis </li>
 										</ul>
 										
 										<h3>ToDo</h3>
@@ -98,10 +97,33 @@
 											<li>Add notification when basic trading strategies are present</li>
 											<li>Add recent news from the company/li>
 										</ul>
-
 									</div>
-
-								<h2>WIP</h2>	
+								</div>
+								<hr />
+								<h2>Introduction</h2>	
+								<p>
+									The stock dashboard was my first standalone project, which I implemented with Python. There are many tutorials 
+									on the internet which show how to create such dashboards, but most of them are just static and don't let the user 
+									choose which indicators they want to have displayed. The interactivity was also the biggest challenge for me at 
+									that time. 
+								</p>
+								<h2>Implementation of the App</h2>
+								<p>
+									A central part was the Python library <a href="https://streamlit.io" target="_blank">Streamlit</a>, which is used 
+									to create web apps relatively straightforward. In this project I came across Streamlit for the first time and without 
+									it I would not have been able to implement it this way.
+								</p>
+								<p>
+									Particularly interesting in the project was the work with financial specific indicators, of which I have heard 
+									before, but never knew exactly what they mean, or measure. Currently Volume, SMA, EMA, RSI, MACD, MFI and Bollinger 
+									Band are implemented. It was also a goal not to use a Python library for these indicators, but to write the 
+									implementation myself (with the help of some online articles it was quite feasible).
+								</p>
+								<p>
+									Besides the calculation I also spend time on the visualization. I used the standard visualizations libraries 
+									Matplotlib and Seaborn, in the future I want to design the visualization with Plotly to offer even more 
+									interactivity. 
+								</p>
 						</section>
 
 					</div>
