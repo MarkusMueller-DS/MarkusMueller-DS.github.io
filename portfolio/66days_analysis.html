@@ -77,7 +77,8 @@
 											<li>14181 unique tweets</li>
 											<li>67.8 tweets per day; max: 165 (02.09.2020), min: 8 (19 and 20.12.2020)</li>
 											<li>Most tweets from user: @paulapivat (173)</li>
-											<li>WordCould with used hashtags</li>
+											<li>Word could with used hashtags</li>
+											<li>Word cloud generator on <b><a href="https://share.streamlit.io/markusmueller-ds/66daysofdata-tweets/main/scripts/streamlit_wordcloud.py" target="_blank">Streamlit share</a></b></li>
 										</ul>
 									</div>
 									<div class="col-6 col-12-small">
@@ -86,6 +87,7 @@
 											<li>Methodology for data collection.</li>
 											<li>Data collection over a longer period of time </li>
 											<li>Preparing and dealing with text for a data analysis </li>
+											<li>Deploying a web app with Streamlit share</li>
 										</ul>
 										
 										<h3>ToDo</h3>
@@ -94,6 +96,7 @@
 											<li>What are the main topics?</li>
 											<li>Differences between first and second round</li>
 											<li>Sentiment analysis</li>
+											<li>Topic analysis</li>
 										</ul>
 									</div>	
 								</div>
@@ -123,6 +126,20 @@
 									limited for free users and does not allow to remove unimportant tweets (e.g. retweets), so I had to do queries 
 									over several months to finally cover the whole period. I queried the premium API with 
 									<b><i><a href="https://pypi.org/project/searchtweets/" target="_blank">seachtweets</a></i></b>.
+								</p>
+								<h2>Data Cleaning</h2>
+								<ul>
+									<li>Removed duplicate tweets</li>
+									<li>Created specific data and time columns</li>
+									<li>Analyzed the time and date of tweets to figure out if I managed to collect every tweet</li>
+									<li>Used regex to create new columns for used hashtags, linked persons, day of the challenge and links.</li>
+									<li>Worked with the nltk library to tokenize, remove stop words and lemmatize the text data</li>
+								</ul>
+								<h2>Results</h2>
+								<p>
+									In addition to the meta data mentioned above, I have created a web app where participants of the challenge can 
+									their tweets in a word cloud. User can also decide whether the word cloud should be created with or without 
+									lemmatization. The web app can be accessed <b><a href="https://share.streamlit.io/markusmueller-ds/66daysofdata-tweets/main/scripts/streamlit_wordcloud.py" target="_blank">here</a></b>.
 								</p>
 							</section>
 							
