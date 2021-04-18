@@ -48,7 +48,7 @@
 									<h1>Boston<br />
 									AirBnB Analysis</a></h2>
 									<p> First deliverable for the Udacity Data Scientist Nanodegree </br>
-									Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/Data-Scientist-Udacity-Nanodegree/tree/master/Write%20A%20Data%20Science%20Blog%20Post" class="icon brands fa-github"><span class="label">Github</span></a></p>
+									Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/Data-Scientist-Udacity-Nanodegree/tree/master/Write%20A%20Data%20Science%20Blog%20Post" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></p>
 								</header>
 								<a href="#" class="image main"><img src="/images/boston.jpg" alt="" /></a>
 
@@ -90,8 +90,66 @@
 											<li>Did a lot of plotting and arranging data to get the right format</li>
 										</ul>
 									</div>
-
-								<h2>WIP</h2>	
+								</div>
+								<hr />
+								<h2>Introduction</h2>	
+								<p>
+									The goal of this project was to write a blog post about a data analysis. This involved coming up with questions 
+									about a dataset and then editing the dataset to answer the questions. The final step was then to write the answers 
+									in a readable report for a non-technical audience. The article can be accessed <b><a href="https://markusmueller-ds.medium.com/so-you-want-to-travel-to-boston-and-take-an-airbnb-here-is-what-you-need-to-know-5fb1d53961a2" target="_blank">here</a></b>.
+								</p>
+								<p>
+									I decided to analyze the AirBnB dataset of Boston from the perspective of a traveler who wants to stay in Boston as 
+									cheaply as possible. <b><a href="https://www.kaggle.com/airbnb/boston" target="_blank">Link</a></b> to dataset.
+								</p>
+								<h2>What did I do?</h2>
+								<p>
+									First, I looked at the data set. From the three datasets I used two:
+									<ul>
+										<li>listings.csv: full description of the listing</li>
+										<li>calendar.csv: shows the availability of each listing for each day and a corresponding price, when the listing is available</li>
+									</ul>
+								</p>
+								<p>
+									After assessing the data I transformed columns that weren’t in the right data format removed outliers in the dataset, 
+									based on the respected histograms. After that the data was ready to be used for the questions. I will shortly 
+									describe what I did in a more technical way, if you want to read about more of the interpretations please read the 
+									medium article.
+								</p>
+								<p>
+									<b>Question 1: What is the availability over the year and how does the price develop?</b></br>
+									For this question, I visualized the sum of available AirBnBs versus the average price per day. I also noticed a 
+									certain pattern (seasonality) in the average price.
+								</p>
+								<p>
+									<b>Question 2: Where are the BnBs in Boston and how expensive is each of them?</b></br>
+									Interactive visualization with plotly. Polted every listing on AirBnB over a map and color-coded the price.
+								</p>
+								<p>
+									<b>Question 3: Which neighborhoods are the most expensive?</b></br>
+									Concise visualization to showcase the difference in price per neighborhood (distance to the average price). 
+								</p>
+								<p>
+									<b>Question 4: What features influence the price of a BnB?</b></br>
+									To answer this question I needed to clean the data more so I could use it in a multiple regression to get the weights 
+									of each feature of a AirBnB (based on the listings) and order them by importance.
+									<ul>
+										<li>Dealt with missing values</li>
+										<li>Checked correlations</li>
+										<li>Looked at the relationship between categorical features and price</li>
+										<li>Feature engineering</li>
+										<li>Created dummy variables</li>
+									</ul>
+									With the features and a simple multiple Regression I was able to predict the price within a RSME of 60, meaning that 
+									on average the model is $60 of the real price, I could also achieve a practical R-squerd of 0.64, meaning that the 
+									model can explain 64% of the variance in price. But that wasn’t really important I just need the weights so I could 
+									rank the features based on their contribution to the prediction.
+								</p>
+								<p>
+									<b>Question 5: How does amenities impact the price?</b></br>
+									For this question I looked at one specific features: the amenities of an AirBnB. To answer the question I used the 
+									calculated weights in question 4.
+								</p>
 						</section>
 
 					</div>
