@@ -1,7 +1,7 @@
 # Static Portfolio Website
 
 
-Link to website:https://markusjmueller.com  
+Link to website: https://markusmueller-ds.github.io 
 
 ![example](example.png)
 
