@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Gold-Analysis</title>
+		<title>CSV-Viewer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
@@ -27,7 +27,7 @@
 						<ul class="links">
 							<li><a href="/index.html">About Me</a></li>
 							<li><a href="/portfolio.html">Portfolio</a></li>
-							<li class="active"><a href="portfolio/gold.html">Gold-Price-Crashes</a></li>
+							<li class="active"><a href="portfolio/gold.html">CSV Viewer</a></li>
 							<li><a href="/cv.html">CV</a></li>
 						</ul>
 						<ul class="icons">
@@ -84,8 +84,7 @@
 										<h3>ToDo</h3>
 										<ul>
 											<li>Add more features to the GUI:</li>
-                                            <li>unique vlaues</li>
-                                            <li>search for content</li>
+											<li>more sophisticated search parameters (results within a range)</li>
                                             <li>add some light preprocessing (filling missing vlaues)</li>
                                             <li>(maybe) change backend to sql to query data faster</li>
 										</ul>
@@ -95,9 +94,23 @@
 								<hr />
 								<h2>Introduction</h2>
 								<p>
-									XXX
+									I often have the problem, when I work with csv files, that I want to look at them quickly and get an 
+									idea how the data is structured. This is not possible with Excel because it often takes too long to load 
+									the file, then the format is often wrong and you can not read the file properly, in addition, no meta 
+									information about the file is displayed. <b>I want to make this better.</b>
 								</p>
 								<h2>Implemented features</h2>
+								<p>
+									Updated 25.09.2021
+									<ul>
+										<li>the entire csv can be searched with one keyword (search within one specifc column with 
+											more advanced serach parameters is in the pipeline)</li>
+										<li>file information will be updated to show how many results are in the search result</li>
+										<li>reset the search result</li>
+										<li>columns can be ordered by clicking on the column header</li>
+										<li>More Information no shows the number of unique values per column</li>
+									</ul>
+								</p>
 								<p>
 									As of 07.09.2021 the following features are implemented:
 									<ul>
