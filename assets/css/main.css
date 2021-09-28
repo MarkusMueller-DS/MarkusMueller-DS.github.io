@@ -72,6 +72,14 @@ input, select, textarea {
 	appearance: none;
 }
 
+#langlib {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-weight: 900;
+	letter-spacing: 0.075em;
+	text-transform: uppercase;
+	font-size: 1.25rem;
+}
+
 /* Basic */
 
 	@-ms-viewport {
