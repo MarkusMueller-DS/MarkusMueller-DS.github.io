@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tweet Generator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/portfolio.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="/index.html">About Me</a></li>
+							<li><a href="/portfolio.html">Portfolio</a></li>
+							<li class="active"><a href="/portfolio/generate_tweets.html">Tweet Generator</a></li>
+							<li><a href="/cv.html">CV</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><a href="generate_tweets.html"> GPT-2 Tweet Generator</a></h1>
+									<p>
+										Train GPT-2 to generate tweets based on the tweets from #66DayofData-challenge
+									</p>
+								</header>
+								<a href="generate_tweets.html" class="image main"><img src="/images/gpt2.png" alt="" /></a>
+
+								<!-- Text stuff -->
+								<div>
+									<span id="langlib">Programming language:</span> Python <br />
+									<span id="langlib">Libraries:</span> GPT-2-simple, tensorflow, spaCy, google's universal sentence encoder, pandas
+								</div>
+								<hr />
+								<h2>Brief Overview:</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Goal</h3>
+										<ul>
+											<li>Training GPT-2 model and using it to generate tweets</li>
+										</ul>
+
+										<h3>Methodology</h3>
+										<ul>
+											<li>Process data to make it suitable for the model</li>
+											<li>Trained 124M base model</li>
+											<li>Checked generated tweets for similarity</li>
+										</ul>
+
+										<h3>Results</h3>
+										<ul>
+											<li>Trained GPT-2 on almost 15000 tweets (2000 epochs)</li>
+											<li>Used model to generate tweets</li>
+											<li>Generated tweets were unique (model didn’t memorized input tweets)</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>What did I learn?</h3>
+										<ul>
+											<li>Working with a pertained ml-model</li>
+											<li>Testing similarity between generated and genuine tweets using spacy similarity score () and google’s universal sentence encoder</li>
+										</ul>
+										
+										<h3>ToDo</h3>
+										<ul>
+											<li>Retrain with newly collected tweets</li>
+											<li>Use different GPT-2 model (355M instead of 124M base model)</li>
+											<li>Fine tune parameters for generating tweets</li>
+											<li>Make an application where users can create tweets with a click</li>
+										</ul>
+									</div>	
+								</div>
+								<hr />
+								<h2>What is GPT-2 ?</h2>
+								<p>
+									GPT-2 is a large transformer-based language model with 1.5 billion parameters, trained on a dataset of 8 million web pages (40GB text data).
+								</p>
+
+								<h2>Generated Tweets Examples (cherry picked)</h2>
+								<p>
+									<ul>
+										<li>Day 6 of #66daysofdataRead Chapter 3 of "Hands-On Machine Learning" which explored the use of RNNs and LSTMs in classification problems. @KenJee_D</li>
+										<li>Day 7: 2nd round #66daysofdata - completed project of data visualization on @HackerRank. It's not sure if I'll continue, but i'm excited to try and watch how it goes!</li>
+										<li>Day 12 of #66daysofdata :Didn't do much today, I worked on a kaggle project for the time being and then I watched a couple of videos on</li>
+										<li>Day 25 of #66daysofdata:Finished "Intro to importing SQL data" on Data Camp.</li>
+										<li>Day 9 of #66DaysOfData! "Machine Learning" by AndrewYNg on #Coursera.Part of the course:- Week5/Regularization: Logistic regression, decision trees and random forest</li>
+									</ul>
+								</p>
+							</section>
+							
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Frankfurt Rhine-Main Metropolitan Area<br />
+							Germany</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">markus.j.mueller94@icloud.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+								<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
