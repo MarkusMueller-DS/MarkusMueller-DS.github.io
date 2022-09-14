@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hashtag-Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/portfolio.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="/index.html">About Me</a></li>
+							<li><a href="/portfolio.html">Portfolio</a></li>
+							<li class="active"><a href="/portfolio/nyc_taxi.html">NYC Taxi Trips</a></li>
+							<li><a href="/cv.html">CV</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><a href="nyc_taxi.html">NYC Taxi Trips</a></h1>
+									<p>Graded mini DS project for the Database Technology class in the 4th semester</br> 
+										Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/NYC-Taxi-Trips" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a>
+									</p>
+								</header>
+								<a href="nyc_taxi.html" class="image main"><img src="/images/nyc_taxi_trips.png" alt="" /></a>
+
+								<!-- Text stuff -->
+								<div>
+									<span id="langlib">Programming language:</span> Python <br />
+									<span id="langlib">Libraries:</span> Pandas, Matplotlib, Seaborn, GeoPandas
+								</div>
+								<hr />
+								<h2>Brief Overview:</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Goal</h3>
+										<ul>
+											<li>Analyze a unique dataset</li>
+											<li>Learn the procedure for a Data Science project</li>
+										</ul>
+
+										<h3>Methodology</h3>
+										<ul>
+											<li>Analyzed three months of NYC yellow taxi trip data</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>What did I learn?</h3>
+										<ul>
+											<li>Working with geospatial data in GeoPandas to create static and interactive maps</li>
+											<li>Using Parquet file format to store data</li>
+										</ul>
+                                        <h3>Results</h3>
+										<ul>
+											<li>Static and interactive maps to showcase taxi trip data in NYC</li>
+										</ul>
+									</div>	
+								</div>
+								<hr />
+								<h2>Introduction</h2>
+								<p>
+									A few years ago, I found a famous visualization that <b><a href="https://chriswhong.github.io/nyctaxi" target="_blank">follows a New York cab for a day</a></b>.
+                                    Since then I always wanted to analyze NYC taxi trip data. As we should find a unique dataset for the graded project, 
+                                    I selected this dataset.
+								</p>
+
+								<h2>Data Gathering</h2>
+								<p>
+                                    The NYC Taxi & Limousine Commission stores a monthly record of all cab trips since 2009 
+                                    (<b><a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page" target="_blank">TLC Trip Record Data</a></b>).
+                                    On the website you can manually download the data for the individual months. I got the data via AWS, 
+                                    because there the data set is available as "Open Data" and you can easily access the data via the command line:
+								</p>
+                                <pre><code>
+aws s3 cp --no-sign-request s3://nyc-tlc/trip\ data/yellow_tripdata_2022-01.parquet . 
+aws s3 cp --no-sign-request s3://nyc-tlc/trip\ data/yellow_tripdata_2022-02.parquet . 
+aws s3 cp --no-sign-request s3://nyc-tlc/trip\ data/yellow_tripdata_2022-03.parquet .
+                                </code></pre>
+                                <p>
+                                    The data is saved in the Apache Parquet-Format which allows for a more efficient data storage and faster access, 
+                                    because of a mix of row-based and column-based (hybrid) storage formats.
+                                    I only focussed on the yellow cabs and analyzed the trips from January till March 2022. With this I got more 
+                                    than 9 million trips with far exceeded the specification of the "mini DS project".
+                                </p>
+
+								<h2>Data Cleaning</h2>
+								<ul>
+									<li>Transformed categorical attributes from float to integer</li>
+									<li>Encoded missing values with 99</li>
+									<li>Calculated `trip_duration` from the difference between `tpep_dropoff_datetime` and `tpep_pickup_datetime`</li>
+									<li>Extracted `tirp_duration_sec` from `trip_duration` to use it for calculations</li>
+									<li>Transformed `trip_distance` to `trip_distance_km` to calculate `average_speed_km/h`</li>
+                                    <li>Removed outlier using box-plots for visual assessment (there was one ride with over 85000 km, which lasts for five days and 21 hours)</li>
+                                    <li>Created individual (aggregated) datasets to answer the research questions</li>
+								</ul>
+                                <p>
+                                    In the end 463.285 rows were removed. Leaving 8.607.976 trips to analyze.
+                                </p>
+								<h2>Questions</h2>
+                                <p>In this section I will show some answers fomr the research questions:</p>
+                                <h3>How many trips are there per hour?</h3>
+								<span class="image fit"><img src="/images/nyc_trips_per_hour.png" alt="" /></span>
+                                <p>
+                                    As expected, rush hour at 6 p.m. is the busiest, with an average of 7,129 trips. 
+                                    The fewest trips are in the morning at 4 a.m., with an average of 468. From 5 a.m. to 6 p.m., 
+                                    the number of trips increases steadily.
+                                </p>
+                                <h3>What are the most common pickup and drop-off zones?</h3>
+                                <span class="image fit"><img src="/images/nyc_count_po_do_borough.png" alt="" /></span>
+                                <p>
+                                    It is clear that Yellow Caps operate almost exclusively in Manhattan and in very few cases still transport 
+                                    passengers in Queens or Brooklyn. There is also no significant difference between pickup and drop-off zones in Manhattan. 
+                                    Most of the trips are in the Midtown area and around Central Park. Whereby most passengers are picked up in the 
+                                    Upper East Side South and dropped off in the Upper East Side North. This is also the most heavily traveled route.
+                                </p>
+                                <h3>Which zones are most frequently served by cabs starting from the JFK airport?</h3>
+                                <span class="image fit"><img src="/images/nyc_location_jfk.png" alt="" /></span>
+                                <p>
+                                    Passengers arriving at JFK Airport travel the most to Manhattan (184,318), with the TimeSq/Theatre District being the 
+                                    busiest with a total of 12,651. Brooklyn and Queens are destinations for over 70,000 passengers. In Brooklyn, 
+                                    Park Slop is the most popular drop-off zone with 4,160 and in Queens, along with JFK Airport itself, it is Baisley Park 
+                                    with 4,618 drop-offs.
+                                </p>
+                                <h3>What are the most frequently used routes?</h3>
+                                <span class="image fit"><img src="/images/nyc_busiest_routes_manhattan.png" alt="" /></span>
+                                <p>
+                                    The busiest route is between Upper East Side North and Upper East Side South, with over 61,788 trips over the three-month period.
+                                </p>
+							</section>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Frankfurt Rhine-Main Metropolitan Area<br />
+							Germany</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="mailto:me@markusjmueller.com">me@markusjmueller.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+								<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
