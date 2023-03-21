@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Question Answering System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/portfolio.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="/index.html">About Me</a></li>
+							<li><a href="/portfolio.html">Portfolio</a></li>
+							<li class="active"><a href="/portfolio/qa_system.html">Question Answering System</a></li>
+							<li><a href="/cv.html">CV</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+							<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><a href="qa_system.html">Question Answering System</a></h1>
+									<p>Final project of the 5th semester Application Of AI course.</br> 
+										Have a look at the code on my Github: <a href="https://github.com/MarkusMueller-DS/NYC-Taxi-Trips" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a>
+									</p>
+								</header>
+								<a href="qa_system.html" class="image main"><img src="/images/qa_system_1.png" alt="" /></a>
+								<p>Image from: <a href="https://blog.seeburger.com/natural-language-question-answering-systems-get-quick-answers-to-concrete-questions/">Link</a></p>
+
+								<!-- Text stuff -->
+								<div>
+									<span id="langlib">Programming language:</span> Python <br />
+									<span id="langlib">Libraries:</span> transformers, elasticsearch, nltk, sklearn, pandas, numpy
+								</div>
+								<hr />
+								<h2>Brief Overview:</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Goal</h3>
+										<ul>
+											<li>Get an answer from a large corpus of text documents</li>
+										</ul>
+
+										<h3>Methodology</h3>
+										<ul>
+											<li>Used elasticsearch to index the documents and get the relevant ones with a query containing the question</li>
+											<li>Leveraged Transformer API to extract the answers from the relevant documents</li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>What did I learn?</h3>
+										<ul>
+											<li>Working with search engine elasticsearch to index and query  documents</li>
+											<li>Understanding and using transformer models for NLP tasks</li>
+											<li>Combine different concepts in one system</li>
+										</ul>
+                                        <h3>Results</h3>
+										<ul>
+											<li>First place in the course competition</li>
+										</ul>
+									</div>	
+								</div>
+								<hr />
+								<h2>Introduction</h2>
+								<p>
+									The goal of this project is to showcase the covered concepts and methods from the semester and use them to create a Question 
+									Answering System. This was a team project with a size of two.
+								</p>
+								<p>
+									To create a Question Answering System, one must understand how to interpret and work with text data. During the semester, 
+									we started with the basics of NLP (tokenization, stemming/lemmatization, bag-of-words, NER), continued with Machine Learning, 
+									and ended the course with more advanced concepts from Deep Learning, where we also covered large Language models based on the 
+									transformer architecture.
+								</p>
+								<p>
+									Here is a top-level overview of the sequence of the System:
+									<ul>
+										<li>Elasticsearch is used as the search engine to index documents and retrieve the relevant ones, provided a query.</li>
+										<li>The Transformer API from <u><a href="https://huggingface.co/docs/transformers/index">Hugging Face</a></u> is used to extract the 
+											answers from the important documents.</li>
+									</ul>
+								</p>
+
+								<h2>Components of the QA-System</h2>
+								<p>
+									Our QA-System is divided into 4 segments: question processing, document retrieval, answer retrieval and answer post processing.
+								</p>
+								<h3>Question Processing</h3>
+								<p>
+									We tried various methods to enhance the query: removing stopwords, numbers, and punctuation. To our astonishment, none of them 
+									increased the chosen performance metric, precision@k (number of relevant documents in the top-k set of retrieved documents). 
+									Therefore, we presented the question to Elasticsearch without any preprocessing.
+								</p>
+								<h3>Document Retrieval</h3>
+								<p>
+									We used k=5 to retrieve 5 relevant documents from Elasticsearch. The query was boosted (increased weights for a specific 
+									field/column), which slightly increased the p@k.
+								</p>
+								<h3>Answer Retrieval</h3>
+								<p>
+									The answer was extracted using a model from the transformer API provided by Hugging Face. For the model, we used 
+									<u><a href="https://huggingface.co/distilbert-base-cased-distilled-squad">DistilBERT base cased distilled SQuAD</a></u>, which is a 
+									pretrained and finetuned model on SQuAD and fits perfectly for the requested task. DistilBERT is a smaller version of BERT created 
+									through the concept known as knowledge distillation, a compression technique in which a smaller model is trained to reproduce the 
+									behavior of a larger model.
+								</p>
+								<p>
+									For each document, two answers were extracted, bringing the count of answers per question to 10. Those 10 answers were ranked 
+									using the score of Elasticsearch per document and the score of the transformer model.
+								</p>
+								<h3>Answer Post Processing</h3>
+								<p>
+									Some of the Answers had some trailing punctuation or relicts of the wikipedia format. Stuff like that was removed in the last step.
+								</p>
+
+								<h2>Results</h2>
+                                <p>
+									There were eight teams in the course, and we achieved the best score with 50.6%. The score is computed by multiplying the match score 
+									(how well the answers overlap in terms of tokens) with the rank of the answer. 
+                                </p>
+							</section>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Frankfurt Rhine-Main Metropolitan Area<br />
+							Germany</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="mailto:me@markusjmueller.com">me@markusjmueller.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://twitter.com/MarkusM99098101" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.xing.com/profile/Markus_Mueller1832/cv" class="icon brands alt fa-xing" target="_blank"><span class="label">Xing</span></a></li>
+								<li><a href="https://www.linkedin.com/in/markus-müller-223706186/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/MarkusMueller-DS" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.kaggle.com/markusmller" class="icon brands alt fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
